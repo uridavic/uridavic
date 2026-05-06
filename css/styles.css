@@ -9,24 +9,101 @@
 }
 
 body {
-    background-color: #3a6ea5; /* Fondo azul clásico de escritorio XP */
+    background-color: #000; /* Fondo base negro */
     font-family: 'Tahoma', 'Segoe UI', sans-serif;
     color: var(--text-color);
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scroll, container will handle it if needed */
 }
 
 .container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-    background: var(--xp-bg);
-    border: 3px solid var(--xp-blue-dark);
-    border-radius: 8px 8px 0 0;
-    box-shadow: var(--window-shadow);
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    width: 100%;
+    margin: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #000;
+    position: relative;
+    overflow-y: auto; /* Scroll interno si el contenido excede el espacio */
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* Starry Background Effect */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 110px 210px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 150px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 190px 150px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 210px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 240px 190px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 270px 20px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 310px 140px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 340px 50px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 380px 220px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 410px 90px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 450px 180px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 490px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 530px 130px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 570px 250px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 610px 60px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 650px 200px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 690px 110px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 730px 10px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 770px 170px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 810px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 850px 230px, #fff, rgba(0,0,0,0));
+    background-size: 400px 400px;
+    animation: twinkle 4s infinite ease-in-out;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Secondary layer of stars for more depth */
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 15px 15px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 100px 100px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 200px 200px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 300px 300px, #fff, rgba(0,0,0,0));
+    background-size: 250px 250px;
+    animation: twinkle 7s infinite ease-in-out reverse;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Ensure content stays above stars */
+.container > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.3; }
 }
 
 /* Header XP */
@@ -40,6 +117,7 @@ body {
 
 .header-top {
     padding: 10px 20px;
+    text-align: center;
 }
 
 /* Glitch Animation */
@@ -51,6 +129,63 @@ body {
     display: inline-block;
     color: #fff;
     margin: 0;
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 15px var(--xp-blue-light),
+        0 0 20px var(--xp-blue-light);
+    animation: glow 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: var(--xp-blue-light);
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 15px var(--xp-blue-light),
+            0 0 20px var(--xp-blue-light);
+    }
+    16% {
+        color: #81bc06;
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 15px #81bc06,
+            0 0 20px #81bc06;
+    }
+    33% {
+        color: #ffba08;
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 15px #ffba08,
+            0 0 20px #ffba08;
+    }
+    50% {
+        color: #f35325;
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 15px #f35325,
+            0 0 20px #f35325;
+    }
+    66% {
+        color: #b137d4;
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 15px #b137d4,
+            0 0 20px #b137d4;
+    }
+    83% {
+        color: #ffffff;
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 15px rgba(255, 255, 255, 0.9),
+            0 0 25px #ffffff,
+            0 0 35px #ffffff;
+    }
 }
 
 .glitch-text::before, .glitch-text::after {
@@ -120,24 +255,58 @@ body {
 }
 
 .start-btn {
-    background: linear-gradient(to bottom, #53a353 0%, #3c813c 100%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(to bottom, #3c813c 0%, #5eaf5e 5%, #4ea54e 10%, #3c813c 90%, #2e5f2e 100%) !important;
     color: white;
     font-weight: bold;
-    border-radius: 0 10px 10px 0;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-style: italic;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    border-radius: 0 15px 15px 0;
+    padding: 3px 20px 3px 12px;
+    border: none;
+    box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), 1px 1px 3px rgba(0,0,0,0.3);
+    text-transform: lowercase;
 }
 
 .start-btn:hover {
-    background: linear-gradient(to bottom, #63b363 0%, #4c914c 100%);
+    background: linear-gradient(to bottom, #4c914c 0%, #6ebf6e 5%, #5eb55e 10%, #4c914c 90%, #3e6f3e 100%) !important;
+    filter: brightness(1.1);
 }
+
+.xp-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transform: skew(-5deg);
+    margin-right: 2px;
+}
+
+.logo-row {
+    display: flex;
+    gap: 2px;
+}
+
+.logo-piece {
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3);
+}
+
+.logo-piece.red { background-color: #f35325; border-radius: 2px 1px 1px 1px; }
+.logo-piece.green { background-color: #81bc06; border-radius: 1px 2px 1px 1px; }
+.logo-piece.blue { background-color: #05a6f0; border-radius: 1px 1px 1px 2px; }
+.logo-piece.yellow { background-color: #ffba08; border-radius: 1px 1px 2px 1px; }
 
 /* Footer */
 .footer {
     text-align: center;
     padding: 10px;
     background: var(--xp-blue-dark);
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 0.8rem;
 }
 
