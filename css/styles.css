@@ -242,16 +242,22 @@ body {
     border-radius: 3px;
     font-weight: normal;
     transition: all 0.1s;
+    text-decoration: none;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-btn:hover {
     background: linear-gradient(to bottom, #e9f0fd 0%, #b2c9f4 100%);
     border-color: #335ea8;
+    color: #000;
 }
 
 .nav-btn:active, .nav-btn.active {
     background: #b2c9f4;
     box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+    color: #000;
 }
 
 .start-btn {
@@ -259,7 +265,7 @@ body {
     align-items: center;
     gap: 8px;
     background: linear-gradient(to bottom, #3c813c 0%, #5eaf5e 5%, #4ea54e 10%, #3c813c 90%, #2e5f2e 100%) !important;
-    color: white;
+    color: white !important;
     font-weight: bold;
     font-style: italic;
     font-size: 1.2rem;
@@ -271,7 +277,8 @@ body {
     text-transform: lowercase;
 }
 
-.start-btn:hover {
+.start-btn:hover, .start-btn:active, .start-btn.active {
+    color: white !important;
     background: linear-gradient(to bottom, #4c914c 0%, #6ebf6e 5%, #5eb55e 10%, #4c914c 90%, #3e6f3e 100%) !important;
     filter: brightness(1.1);
 }
