@@ -340,3 +340,7 @@ body {
 }
 
 img { max-width: 100%; border: none; }
+
+p {
+    text-align: justify;
+}
