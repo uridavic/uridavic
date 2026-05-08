@@ -5,5 +5,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('URIDAVIC OS cargado correctamente.');
-    // Aquí se pueden agregar inicializaciones globales si fuera necesario.
+    
+    // Card Flip Logic for Gallery
+    const gallery = document.querySelector('.gallery');
+    if (gallery) {
+        gallery.addEventListener('click', (e) => {
+            const card = e.target.closest('.photo-card');
+            if (card) {
+                card.classList.toggle('flipped');
+            }
+        });
+    }
 });
