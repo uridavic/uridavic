@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #000; /* Fondo base negro */
+    background-color: #000;
     font-family: 'Tahoma', 'Segoe UI', sans-serif;
     color: var(--text-color);
     margin: 0;
@@ -17,81 +17,70 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden; /* Prevent body scroll, container will handle it if needed */
+    overflow: hidden;
 }
 
 .container {
-    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    flex-grow: 1;
     width: 100%;
     margin: 0;
-    padding: 20px 40px; /* Reduced top/bottom padding from 40px to 20px */
+    padding: 20px 40px;
     box-sizing: border-box;
     background: #000;
     position: relative;
-    overflow-y: auto; /* Scroll interno si el contenido excede el espacio */
+    overflow-y: auto;
     border: none;
     border-radius: 0;
     box-shadow: none;
     color: #fff;
 }
 
-/* Starry Background Effect */
+/* HIGH INTENSITY Starry Background */
 .container::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -100%;
+    left: -100%;
+    right: -100%;
+    bottom: -100%;
     background-image: 
-        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 110px 210px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 150px 30px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 190px 150px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 210px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 240px 190px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 270px 20px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 310px 140px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 80px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 110px 210px, #fff, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 240px 190px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 340px 50px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 380px 220px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 410px 90px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 450px 180px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 490px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 530px 130px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 570px 250px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 610px 60px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 650px 200px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 690px 110px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 730px 10px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 770px 170px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 810px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 850px 230px, #fff, rgba(0,0,0,0));
-    background-size: 400px 400px;
-    animation: twinkle 4s infinite ease-in-out;
+        radial-gradient(3px 3px at 450px 180px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 410px 90px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 270px 320px, #fff, rgba(0,0,0,0));
+    background-size: 600px 600px;
+    animation: spaceDrift 60s linear infinite, twinkle 4s infinite ease-in-out;
     z-index: 0;
     pointer-events: none;
 }
 
-/* Secondary layer of stars for more depth */
+/* VIVID Nebula layer - Adjusted to prevent tiling */
 .container::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -100%;
+    left: -100%;
+    right: -100%;
+    bottom: -100%;
     background-image: 
-        radial-gradient(1px 1px at 15px 15px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 100px 100px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 200px 200px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 300px 300px, #fff, rgba(0,0,0,0));
-    background-size: 250px 250px;
-    animation: twinkle 7s infinite ease-in-out reverse;
+        radial-gradient(2px 2px at 15px 15px, #fff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 100px 100px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 200px 200px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 300px 300px, #fff, rgba(0,0,0,0)),
+        /* Larger, softer Nebula glows with no-repeat */
+        radial-gradient(circle at 40% 40%, rgba(36, 94, 219, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 70% 60%, rgba(177, 55, 212, 0.12) 0%, transparent 60%);
+    background-size: 500px 500px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+    animation: spaceDrift 100s linear infinite reverse, twinkle 6s infinite ease-in-out reverse;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.7;
     pointer-events: none;
 }
 
@@ -101,9 +90,14 @@ body {
     z-index: 1;
 }
 
+@keyframes spaceDrift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(150px, 150px); }
+}
+
 @keyframes twinkle {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 0.3; }
+    0%, 100% { opacity: 0.9; filter: brightness(1.2); }
+    50% { opacity: 0.5; filter: brightness(0.9); }
 }
 
 /* Header XP */
@@ -113,11 +107,11 @@ body {
     padding: 10px;
     border-bottom: 2px solid #003ca5;
     box-shadow: inset 0 1px 1px rgba(255,255,255,0.5);
-    margin-bottom: 0; /* Explicitly removed bottom margin */
+    margin-bottom: 0;
 }
 
 .header-top {
-    padding: 5px 20px; /* Reduced vertical padding from 10px to 5px */
+    padding: 5px 20px;
     text-align: center;
 }
 
@@ -129,73 +123,22 @@ body {
     position: relative;
     display: inline-block;
     color: #fff;
-    margin: 0; /* Already 0, but reinforcing it */
-    text-shadow: 
-        0 0 5px rgba(255, 255, 255, 0.8),
-        0 0 10px rgba(255, 255, 255, 0.5),
-        0 0 15px var(--xp-blue-light),
-        0 0 20px var(--xp-blue-light);
+    margin: 0;
+    text-shadow: 0 0 10px var(--xp-blue-light);
     animation: glow 6s ease-in-out infinite;
 }
 
 @keyframes glow {
-    0%, 100% {
-        color: var(--xp-blue-light);
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 10px rgba(255, 255, 255, 0.5),
-            0 0 15px var(--xp-blue-light),
-            0 0 20px var(--xp-blue-light);
-    }
-    16% {
-        color: #81bc06;
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 10px rgba(255, 255, 255, 0.5),
-            0 0 15px #81bc06,
-            0 0 20px #81bc06;
-    }
-    33% {
-        color: #ffba08;
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 10px rgba(255, 255, 255, 0.5),
-            0 0 15px #ffba08,
-            0 0 20px #ffba08;
-    }
-    50% {
-        color: #f35325;
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 10px rgba(255, 255, 255, 0.5),
-            0 0 15px #f35325,
-            0 0 20px #f35325;
-    }
-    66% {
-        color: #b137d4;
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 10px rgba(255, 255, 255, 0.5),
-            0 0 15px #b137d4,
-            0 0 20px #b137d4;
-    }
-    83% {
-        color: #ffffff;
-        text-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.8),
-            0 0 15px rgba(255, 255, 255, 0.9),
-            0 0 25px #ffffff,
-            0 0 35px #ffffff;
-    }
+    0%, 100% { color: var(--xp-blue-light); text-shadow: 0 0 20px var(--xp-blue-light); }
+    25% { color: #81bc06; text-shadow: 0 0 20px #81bc06; }
+    50% { color: #f35325; text-shadow: 0 0 20px #f35325; }
+    75% { color: #ffba08; text-shadow: 0 0 20px #ffba08; }
 }
 
 .glitch-text::before, .glitch-text::after {
     content: attr(data-text);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
 }
 
 .glitch-text::before {
@@ -213,10 +156,6 @@ body {
 
 @keyframes glitch-anim {
     0% { clip: rect(31px, 9999px, 94px, 0); }
-    20% { clip: rect(62px, 9999px, 42px, 0); }
-    40% { clip: rect(16px, 9999px, 78px, 0); }
-    60% { clip: rect(87px, 9999px, 11px, 0); }
-    80% { clip: rect(54px, 9999px, 35px, 0); }
     100% { clip: rect(29px, 9999px, 63px, 0); }
 }
 
@@ -230,7 +169,7 @@ body {
     display: flex;
     gap: 2px;
     background: #e1e1e1;
-    padding: 3px 5px; /* Reduced vertical padding from 5px to 3px */
+    padding: 3px 5px;
     border: 1px solid #999;
 }
 
@@ -252,13 +191,11 @@ body {
 .nav-btn:hover {
     background: linear-gradient(to bottom, #e9f0fd 0%, #b2c9f4 100%);
     border-color: #335ea8;
-    color: #000;
 }
 
-.nav-btn:active, .nav-btn.active {
+.nav-btn.active {
     background: #b2c9f4;
     box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
-    color: #000;
 }
 
 .start-btn {
@@ -278,12 +215,7 @@ body {
     text-transform: lowercase;
 }
 
-.start-btn:hover, .start-btn:active, .start-btn.active {
-    color: white !important;
-    background: linear-gradient(to bottom, #4c914c 0%, #6ebf6e 5%, #5eb55e 10%, #4c914c 90%, #3e6f3e 100%) !important;
-    filter: brightness(1.1);
-}
-
+/* XP LOGO */
 .xp-logo {
     display: flex;
     flex-direction: column;
@@ -314,42 +246,20 @@ body {
     text-align: center;
     padding: 10px;
     background: var(--xp-blue-dark);
-    color: rgb(0, 0, 0);
+    color: #fff;
     font-size: 0.8rem;
 }
 
-/* Content */
-#main-content {
-    flex-grow: 1;
-}
-
-.page-title {
-    border-bottom: 2px dashed var(--primary-color);
-    padding-bottom: 10px;
-    margin: 0 0 20px 0; /* Forced top margin to 0 */
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 0.8rem;
-    border-top: var(--border-style);
-    background: #eee;
-}
-
-/* Info Grid (udv.html) */
+/* Info Grid */
 .info-grid {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 20px;
-    align-items: start; /* Aligns items to the top of the row */
+    align-items: start;
     margin-top: 15px;
 }
 
-.info-grid p {
-    margin-top: 0; /* Remove default paragraph margin to align with image top */
-}
+.info-grid p { margin-top: 0; }
 
 .info-logo {
     max-width: 100px;
@@ -358,19 +268,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.loader {
-    text-align: center;
-    padding: 50px;
-    font-style: italic;
-}
-
 /* Gallery and Photo Cards */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px;
     margin-top: 20px;
-    perspective: 1000px; /* Essential for 3D effect */
+    perspective: 1000px;
 }
 
 .photo-card {
@@ -382,9 +286,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.photo-card:hover {
-    transform: translateY(-5px);
-}
+.photo-card:hover { transform: translateY(-5px); }
 
 .card-inner {
     position: relative;
@@ -394,9 +296,7 @@ body {
     transform-style: preserve-3d;
 }
 
-.photo-card.flipped .card-inner {
-    transform: rotateY(180deg);
-}
+.photo-card.flipped .card-inner { transform: rotateY(180deg); }
 
 .card-front, .card-back {
     width: 100%;
@@ -414,16 +314,11 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-front {
-    position: relative; /* Pushes the height of the parent */
-    justify-content: flex-start;
-}
+.card-front { position: relative; justify-content: flex-start; }
 
 .card-back {
-    position: absolute; /* Overlays the front */
-    top: 0;
-    left: 0;
-    height: 100%;
+    position: absolute;
+    top: 0; left: 0; height: 100%;
     transform: rotateY(180deg);
     background: rgba(36, 94, 219, 0.4);
     text-align: center;
@@ -431,35 +326,17 @@ body {
     justify-content: center;
 }
 
-.card-back h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.1rem;
-    color: var(--xp-orange);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.card-back p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin: 0;
-}
-
 .photo-card img {
     border-radius: 10px;
     width: 100%;
-    aspect-ratio: 1 / 1; /* Force 1:1 aspect ratio */
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    border: none;
 }
 
-.photo-card .card-front p {
-    font-size: 0.9rem;
-    margin: 15px 0 0 0;
-    color: #fff;
-    font-weight: 500;
+.page-title {
+    border-bottom: 2px dashed #fff;
+    padding-bottom: 10px;
+    margin: 0 0 20px 0;
 }
 
-img {
-    max-width: 100%;
-    border: none;
-}
+img { max-width: 100%; border: none; }
