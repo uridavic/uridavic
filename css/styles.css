@@ -28,21 +28,31 @@ body {
     box-sizing: border-box;
     background: #000;
     position: relative;
-    overflow-y: auto;
+    overflow: hidden;
     border: none;
     border-radius: 0;
     box-shadow: none;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollable content layer */
+.container > section {
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
+    height: 100%;
 }
 
 /* HIGH INTENSITY Starry Background */
 .container::before {
     content: "";
     position: absolute;
-    top: -100%;
-    left: -100%;
-    right: -100%;
-    bottom: -100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: 
         radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 150px 30px, #fff, rgba(0,0,0,0)),
@@ -55,30 +65,27 @@ body {
         radial-gradient(2px 2px at 410px 90px, #fff, rgba(0,0,0,0)),
         radial-gradient(2.5px 2.5px at 270px 320px, #fff, rgba(0,0,0,0));
     background-size: 600px 600px;
-    animation: spaceDrift 60s linear infinite, twinkle 4s infinite ease-in-out;
+    animation: spaceDrift 60s linear infinite;
     z-index: 0;
     pointer-events: none;
 }
 
-/* VIVID Nebula layer - Adjusted to prevent tiling */
+/* Secondary Star layer */
 .container::after {
     content: "";
     position: absolute;
-    top: -100%;
-    left: -100%;
-    right: -100%;
-    bottom: -100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: 
         radial-gradient(2px 2px at 15px 15px, #fff, rgba(0,0,0,0)),
         radial-gradient(3px 3px at 100px 100px, #fff, rgba(0,0,0,0)),
         radial-gradient(2.5px 2.5px at 200px 200px, #fff, rgba(0,0,0,0)),
-        radial-gradient(4px 4px at 300px 300px, #fff, rgba(0,0,0,0)),
-        /* Larger, softer Nebula glows with no-repeat */
-        radial-gradient(circle at 40% 40%, rgba(36, 94, 219, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 70% 60%, rgba(177, 55, 212, 0.12) 0%, transparent 60%);
-    background-size: 500px 500px, 100% 100%;
-    background-repeat: repeat, no-repeat;
-    animation: spaceDrift 100s linear infinite reverse, twinkle 6s infinite ease-in-out reverse;
+        radial-gradient(4px 4px at 300px 300px, #fff, rgba(0,0,0,0));
+    background-size: 500px 500px;
+    background-repeat: repeat;
+    animation: spaceDriftSecondary 100s linear infinite;
     z-index: 0;
     opacity: 0.7;
     pointer-events: none;
@@ -91,8 +98,13 @@ body {
 }
 
 @keyframes spaceDrift {
-    from { transform: translate(0, 0); }
-    to { transform: translate(150px, 150px); }
+    from { background-position: 0 0; }
+    to { background-position: 600px 600px; }
+}
+
+@keyframes spaceDriftSecondary {
+    from { background-position: 0 0; }
+    to { background-position: -500px -500px; }
 }
 
 @keyframes twinkle {
@@ -243,11 +255,18 @@ body {
 
 /* Footer */
 .footer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     background: var(--xp-blue-dark);
     color: #fff;
     font-size: 0.8rem;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
 }
 
 /* Info Grid */
