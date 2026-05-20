@@ -204,17 +204,21 @@ xp-header, xp-footer {
     color: #81bc06 !important;
     font-weight: 700;
     font-size: 1rem;
-    border-radius: 24px;
-    padding: 6px 20px 6px 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    padding: 0 !important;
     box-shadow: 0 4px 15px rgba(129, 188, 6, 0.1);
-    text-transform: lowercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .start-btn:hover {
     background: linear-gradient(135deg, rgba(60, 129, 60, 0.3) 0%, rgba(94, 175, 94, 0.2) 100%) !important;
     border-color: rgba(129, 188, 6, 0.6) !important;
     color: #a3e313 !important;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 0 10px 25px -5px rgba(129, 188, 6, 0.25);
 }
 
@@ -233,6 +237,10 @@ xp-header, xp-footer {
     margin-right: 4px;
     filter: drop-shadow(0 0 4px currentColor);
     transition: var(--transition-smooth);
+}
+
+.start-btn .xp-logo {
+    margin-right: 0;
 }
 
 .logo-row {
