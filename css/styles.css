@@ -94,7 +94,16 @@ body::after {
 }
 
 /* Custom Elements display configuration */
-xp-header, xp-footer {
+xp-header {
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+xp-footer {
     display: block;
     flex-shrink: 0;
     width: 100%;
@@ -108,9 +117,6 @@ xp-header, xp-footer {
     border-bottom: 1px solid var(--glass-border);
     padding: 0;
     margin-bottom: 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .header-top {
@@ -418,8 +424,8 @@ a:hover {
 /* Modernized Gallery and 3D Cards */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
     margin-top: 32px;
     perspective: 1000px;
 }
@@ -572,8 +578,8 @@ a:hover {
     }
     
     .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 }
 
