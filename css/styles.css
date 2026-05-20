@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -110,6 +111,11 @@ body {
 @keyframes twinkle {
     0%, 100% { opacity: 0.9; filter: brightness(1.2); }
     50% { opacity: 0.5; filter: brightness(0.9); }
+}
+
+xp-header, xp-footer {
+    display: block;
+    flex-shrink: 0;
 }
 
 /* Header XP */
@@ -362,4 +368,41 @@ img { max-width: 100%; border: none; }
 
 p {
     text-align: justify;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px 15px;
+    }
+    
+    .glitch-text {
+        font-size: 2rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .info-logo {
+        max-width: 80px;
+    }
+    
+    .xp-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .nav-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .start-btn {
+        font-size: 1rem;
+        padding: 3px 15px 3px 10px;
+    }
 }
