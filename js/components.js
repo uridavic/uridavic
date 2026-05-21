@@ -34,7 +34,6 @@ class XPHeader extends HTMLElement {
                                 <div class="logo-piece yellow"></div>
                             </div>
                         </div>
-                        inicio
                     </a>
                     <a href="udv.html" class="nav-btn ${isActive('udv.html') ? 'active' : ''}">UDV</a>
                     <a href="fotos.html" class="nav-btn ${isActive('fotos.html') ? 'active' : ''}">Fotos</a>
