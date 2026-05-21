@@ -15,10 +15,10 @@
         <section>
             <h2 class="page-title">Proyectos</h2>
             
-            <!-- Codificador Genkidan - Retro Windows XP App -->
+            <!-- Codificador uridavic - Retro Windows XP App -->
             <div class="xp-window-wrapper">
                 <!-- Ventana clásica de Windows XP -->
-                <div class="xp-window" id="genkidan-app">
+                <div class="xp-window" id="uridavic-app">
                     <!-- Barra de título clásica -->
                     <div class="xp-title-bar">
                         <div class="xp-title-icon">
@@ -88,56 +88,54 @@
                         <div class="xp-closed-header">
                             <span class="xp-mini-logo">ℹ️</span> Aplicación cerrada
                         </div>
-                        <p class="xp-closed-text">El Codificador Genkidan ha sido minimizado.</p>
+                        <p class="xp-closed-text">El Codificador uridavic ha sido minimizado.</p>
                         <button class="xp-button xp-btn-blue" id="btn-reopen">🔓 Reabrir aplicación</button>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <!-- Ventana de Ayuda Modal Retro Windows XP -->
-            <div class="xp-modal-overlay hidden" id="xp-help-modal">
-                <div class="xp-window xp-help-window">
-                    <div class="xp-title-bar">
-                        <div class="xp-title-icon">❓</div>
-                        <span class="xp-title-text">Ayuda - Codificador URIDAVIC 36</span>
-                        <div class="xp-title-controls">
-                            <button class="xp-btn-close" id="btn-help-close" aria-label="Cerrar"></button>
-                        </div>
+    <!-- Ventana de Ayuda Modal Retro Windows XP -->
+    <div class="xp-modal-overlay hidden" id="xp-help-modal">
+        <div class="xp-window xp-help-window">
+            <div class="xp-title-bar">
+                <div class="xp-title-icon">❓</div>
+                <span class="xp-title-text">Ayuda - Codificador URIDAVIC 36</span>
+                <div class="xp-title-controls">
+                    <button class="xp-btn-close" id="btn-help-close" aria-label="Cerrar"></button>
+                </div>
+            </div>
+            <div class="xp-window-content xp-help-content-wrapper">
+                <div class="xp-help-layout">
+                    <!-- Menú vertical izquierdo -->
+                    <div class="xp-help-menu">
+                        <button class="xp-help-menu-btn active" data-tab="help-encode">🔒 Codificar</button>
+                        <button class="xp-help-menu-btn" data-tab="help-decode">🔓 Decodificar</button>
+                        <button class="xp-help-menu-btn" data-tab="help-code">📋 Tabla de Código</button>
+                        <button class="xp-help-menu-btn" data-tab="help-about">ℹ️ Acerca de</button>
+                        <button class="xp-help-menu-btn xp-help-menu-close" id="btn-help-menu-close">❌ Cerrar</button>
                     </div>
-                    <div class="xp-window-content xp-help-content-wrapper">
-                        <div class="xp-help-layout">
-                            <!-- Menú vertical izquierdo -->
-                            <div class="xp-help-menu">
-                                <button class="xp-help-menu-btn active" data-tab="help-encode">🔒 Codificar</button>
-                                <button class="xp-help-menu-btn" data-tab="help-decode">🔓 Decodificar</button>
-                                <button class="xp-help-menu-btn" data-tab="help-version">ℹ️ Versión</button>
-                                <button class="xp-help-menu-btn" data-tab="help-code">📋 Tabla de Código</button>
-                                <button class="xp-help-menu-btn" data-tab="help-about">ℹ️ Acerca de</button>
-<button class="xp-help-menu-btn xp-help-menu-close" id="btn-help-menu-close">❌ Cerrar</button>
-                            </div>
-                            
-                            <!-- Panel de contenido derecho (No editable) -->
-                            <div class="xp-help-panel">
-                                <div class="xp-tab-content active" id="tab-help-encode">
-                                    <h3>Cómo codificar mensajes</h3>
-                                    <p>Escribe cualquier mensaje usando letras de la A a la Z, la letra Ñ y los signos permitidos en el área de texto principal.</p>
-                                    <p>Haz clic en el botón <strong>"Codificar"</strong>. El programa traducirá cada letra a su correspondiente número de dos dígitos, separándolos con espacios simples y manteniendo la estructura de tus palabras.</p>
-                                </div>
-                                <div class="xp-tab-content" id="tab-help-decode">
-                                    <h3>Cómo decodificar mensajes</h3>
-                                    <p>Introduce una secuencia de números de dos dígitos en el área de texto.</p>
-                                    <p>Haz clic en <strong>"Decodificar"</strong> para revelar el mensaje original.</p>
-                                    <p>El mensaje resultante estará en mayúsculas y sin acentos debido a que el código internacional URIDAVIC36 no hay números definidos para este tipo de caracteres, los creadores eran muy babosos.</p>
-                                </div>
-                                <div class="xp-tab-content" id="tab-help-version">
-                                    <h3>Acerca de esta aplicación</h3>
-                                    <p class="highlight-text">Codificador URIDAVIC 36 - Versión Web 2026</p>
-                                    <p>Esta aplicación es una recreación fiel del software original desarrollado en <strong>Visual Basic 6.0 / .NET en el año 2012</strong> por Dany Hertiz.</p>
-                                    <p>Reconstruida con HTML, CSS y JS nativos para preservar el legado retro del cómputo de la década de los 2000.</p>
-                                </div>
-                                <div class="xp-tab-content" id="tab-help-about">
-    <h3>Acerca de</h3>
-    <pre class="about-box" style="font-family: Tahoma, monospace; white-space: pre-wrap;">
+                    
+                    <!-- Panel de contenido derecho (No editable) -->
+                    <div class="xp-help-panel">
+                        <div class="xp-tab-content active" id="tab-help-encode">
+                            <h3>Cómo codificar mensajes</h3>
+                            <p>Escribe cualquier mensaje usando letras de la A a la Z, la letra Ñ y los signos permitidos en el área de texto principal.</p>
+                            <p>Haz clic en el botón <strong>"Codificar"</strong>. El programa traducirá cada letra a su correspondiente número de dos dígitos, separándolos con espacios simples y manteniendo la estructura de tus palabras.</p>
+                        </div>
+                        <div class="xp-tab-content" id="tab-help-decode">
+                            <h3>Cómo decodificar mensajes</h3>
+                            <p>Introduce una secuencia de números de dos dígitos en el área de texto.</p>
+                            <p>Haz clic en <strong>"Decodificar"</strong> para revelar el mensaje original.</p>
+                            <p>El mensaje resultante estará en mayúsculas y sin acentos debido a que el código internacional URIDAVIC36 no hay números definidos para este tipo de caracteres, los creadores eran muy babosos.</p>
+                        </div>
+                        <div class="xp-tab-content" id="tab-help-about">
+                            <h3>Acerca de</h3>
+                            <p class="highlight-text">Codificador URIDAVIC 36 - Versión Web 2026</p>
+                            <p>Esta aplicación es una recreación fiel del software original desarrollado en <strong>Visual Basic 6.0 / .NET en el año 2012</strong> por Dany Hertiz.</p>
+                            <p>Reconstruida con HTML, CSS y JS nativos para preservar el legado retro del cómputo de la década de los 2000.</p>
+                            <pre class="about-box" style="font-family: Tahoma, monospace; white-space: pre-wrap;">
 Codificador URIDAVIC 36
 Versión: 1.0
 Copyright 2026, Dany Hertiz
@@ -153,29 +151,26 @@ Este programa está protegido por las leyes de derechos de autor y otros tratado
 La reproducción o distribución ilícita de este programa o de cualquier parte del mismo está penada por la ley con severas sanciones civiles y penales y será objeto de todas las acciones judiciales que correspondan.
 
 P.D. No es cierto 🤭
-    </pre>
-</div>
-<div class="xp-tab-content" id="tab-help-code">
-                                    <h3>Tabla de sustitución de caracteres</h3>
-                                    <div class="xp-table-container">
-                                        <table class="xp-char-table">
-                                            <thead>
-                                                <tr><th>Char</th><th>Código</th><th>Char</th><th>Código</th><th>Char</th><th>Código</th></tr>
-                                            </thead>
-                                            <tbody id="xp-table-body">
-                                                <!-- Se generará dinámicamente con JavaScript -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            </pre>
+                        </div>
+                        <div class="xp-tab-content" id="tab-help-code">
+                            <h3>Tabla de sustitución de caracteres</h3>
+                            <div class="xp-table-container">
+                                <table class="xp-char-table">
+                                    <thead>
+                                        <tr><th>Char</th><th>Código</th><th>Char</th><th>Código</th><th>Char</th><th>Código</th></tr>
+                                    </thead>
+                                    <tbody id="xp-table-body">
+                                        <!-- Se generará dinámicamente con JavaScript -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
+        </div>
+    </div>
     <xp-footer></xp-footer>
 
     <script src="js/components.js"></script>

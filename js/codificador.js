@@ -1,6 +1,6 @@
 /**
  * codificador.js
- * Lógica interactiva para la aplicación retro "Codificador Genkidan".
+ * Lógica interactiva para la aplicación retro "Codificador uridavic".
  * Recrea el comportamiento de Visual Basic 2012 con estética y audio retro.
  */
 
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnExit = document.getElementById('btn-exit');
     
     // Control de ventanas (minimizar/cerrar/reabrir)
-    const appWrapper = document.getElementById('genkidan-app');
+    const appWrapper = document.getElementById('uridavic-app');
     const closedWrapper = document.getElementById('xp-closed-state');
     const btnWinMinimize = document.getElementById('btn-win-minimize');
     const btnWinClose = document.getElementById('btn-win-close');

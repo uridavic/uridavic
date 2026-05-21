@@ -1,6 +1,6 @@
 /* 
   codificador.css 
-  Estilo retro Windows XP Luna para la aplicación "Codificador Genkidan".
+  Estilo retro Windows XP Luna para la aplicación "Codificador uridavic".
   Diseñado para integrarse armónicamente con el sitio web de Uridavic.
 */
 
@@ -432,7 +432,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 10001;
     padding: 16px;
     box-sizing: border-box;
 }
