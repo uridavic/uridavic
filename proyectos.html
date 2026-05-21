@@ -6,6 +6,7 @@
     <title>Uridavic - Proyectos</title>
     <link rel="icon" type="image/x-icon" href="img/udv.ico">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/codificador.css">
 </head>
 <body>
     <xp-header></xp-header>
@@ -13,8 +14,165 @@
     <main class="container">
         <section>
             <h2 class="page-title">Proyectos</h2>
-            <img src="img/construc.gif"
-                alt="En construcción" style="display: block; margin: 20px auto; width: 300px;">
+            
+            <!-- Codificador Genkidan - Retro Windows XP App -->
+            <div class="xp-window-wrapper">
+                <!-- Ventana clásica de Windows XP -->
+                <div class="xp-window" id="genkidan-app">
+                    <!-- Barra de título clásica -->
+                    <div class="xp-title-bar">
+                        <div class="xp-title-icon">
+                            <span class="xp-mini-logo">⚙️</span>
+                        </div>
+                        <span class="xp-title-text">Codificador URIDAVIC 36 v1.0</span>
+                        <div class="xp-title-controls">
+                            <button class="xp-btn-minimize" id="btn-win-minimize" aria-label="Minimizar"></button>
+                            <button class="xp-btn-maximize" disabled aria-label="Maximizar"></button>
+                            <button class="xp-btn-close" id="btn-win-close" aria-label="Cerrar"></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Contenido de la Aplicación -->
+                    <div class="xp-window-content">
+                        <!-- Mensaje de advertencia elegante / notificaciones -->
+                        <div class="xp-alert-panel hidden" id="xp-alert">
+                            <div class="xp-alert-icon">⚠️</div>
+                            <div class="xp-alert-text" id="xp-alert-msg">Caracteres no válidos detectados.</div>
+                        </div>
+                        
+                        <!-- Textarea con scrollbars estilo XP -->
+                        <div class="xp-field-group">
+                            <textarea id="xp-textarea" class="xp-textarea" placeholder="Escribe tu mensaje para codificar o números separados por espacios para decodificar..." rows="5"></textarea>
+                        </div>
+                        
+                        <!-- Panel de Control / Botones -->
+                        <div class="xp-controls-panel">
+                            <!-- Lado Izquierdo (Codificar/Decodificar - 50% de ancho total) -->
+                            <div class="xp-actions-left">
+                                <button class="xp-button xp-btn-large xp-btn-blue" id="btn-encode">
+                                    <span class="btn-icon">🔒</span> Codificar
+                                </button>
+                                <button class="xp-button xp-btn-large xp-btn-green" id="btn-decode">
+                                    <span class="btn-icon">🔓</span> Decodificar
+                                </button>
+                            </div>
+                            
+                            <!-- Lado Derecho (Matriz de botones pequeños 2x2) -->
+                            <div class="xp-actions-right">
+                                <button class="xp-button xp-btn-small" id="btn-copy" title="Copiar texto al portapapeles">
+                                    📋 Copiar texto
+                                </button>
+                                <button class="xp-button xp-btn-small" id="btn-clear" title="Borrar todo el contenido">
+                                    🗑️ Borrar todo
+                                </button>
+                                <button class="xp-button xp-btn-small" id="btn-help" title="Ver guía de ayuda">
+                                    ❓ Ayuda
+                                </button>
+                                <button class="xp-button xp-btn-small" id="btn-exit" title="Cerrar aplicación">
+                                    ❌ Salir
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Barra de estado dinámica -->
+                        <div class="xp-status-bar">
+                            <div class="status-left" id="status-char-count">Caracteres: 0</div>
+                            <div class="status-right">Copyright 2026, Dany Hertiz</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vista minimizada para el estado de "Salida" -->
+                <div class="xp-minimized-panel hidden" id="xp-closed-state">
+                    <div class="xp-closed-card">
+                        <div class="xp-closed-header">
+                            <span class="xp-mini-logo">ℹ️</span> Aplicación cerrada
+                        </div>
+                        <p class="xp-closed-text">El Codificador Genkidan ha sido minimizado.</p>
+                        <button class="xp-button xp-btn-blue" id="btn-reopen">🔓 Reabrir aplicación</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ventana de Ayuda Modal Retro Windows XP -->
+            <div class="xp-modal-overlay hidden" id="xp-help-modal">
+                <div class="xp-window xp-help-window">
+                    <div class="xp-title-bar">
+                        <div class="xp-title-icon">❓</div>
+                        <span class="xp-title-text">Ayuda - Codificador URIDAVIC 36</span>
+                        <div class="xp-title-controls">
+                            <button class="xp-btn-close" id="btn-help-close" aria-label="Cerrar"></button>
+                        </div>
+                    </div>
+                    <div class="xp-window-content xp-help-content-wrapper">
+                        <div class="xp-help-layout">
+                            <!-- Menú vertical izquierdo -->
+                            <div class="xp-help-menu">
+                                <button class="xp-help-menu-btn active" data-tab="help-encode">🔒 Codificar</button>
+                                <button class="xp-help-menu-btn" data-tab="help-decode">🔓 Decodificar</button>
+                                <button class="xp-help-menu-btn" data-tab="help-version">ℹ️ Versión</button>
+                                <button class="xp-help-menu-btn" data-tab="help-code">📋 Tabla de Código</button>
+                                <button class="xp-help-menu-btn" data-tab="help-about">ℹ️ Acerca de</button>
+<button class="xp-help-menu-btn xp-help-menu-close" id="btn-help-menu-close">❌ Cerrar</button>
+                            </div>
+                            
+                            <!-- Panel de contenido derecho (No editable) -->
+                            <div class="xp-help-panel">
+                                <div class="xp-tab-content active" id="tab-help-encode">
+                                    <h3>Cómo codificar mensajes</h3>
+                                    <p>Escribe cualquier mensaje usando letras de la A a la Z, la letra Ñ y los signos permitidos en el área de texto principal.</p>
+                                    <p>Haz clic en el botón <strong>"Codificar"</strong>. El programa traducirá cada letra a su correspondiente número de dos dígitos, separándolos con espacios simples y manteniendo la estructura de tus palabras.</p>
+                                </div>
+                                <div class="xp-tab-content" id="tab-help-decode">
+                                    <h3>Cómo decodificar mensajes</h3>
+                                    <p>Introduce una secuencia de números de dos dígitos en el área de texto.</p>
+                                    <p>Haz clic en <strong>"Decodificar"</strong> para revelar el mensaje original.</p>
+                                    <p>El mensaje resultante estará en mayúsculas y sin acentos debido a que el código internacional URIDAVIC36 no hay números definidos para este tipo de caracteres, los creadores eran muy babosos.</p>
+                                </div>
+                                <div class="xp-tab-content" id="tab-help-version">
+                                    <h3>Acerca de esta aplicación</h3>
+                                    <p class="highlight-text">Codificador URIDAVIC 36 - Versión Web 2026</p>
+                                    <p>Esta aplicación es una recreación fiel del software original desarrollado en <strong>Visual Basic 6.0 / .NET en el año 2012</strong> por Dany Hertiz.</p>
+                                    <p>Reconstruida con HTML, CSS y JS nativos para preservar el legado retro del cómputo de la década de los 2000.</p>
+                                </div>
+                                <div class="xp-tab-content" id="tab-help-about">
+    <h3>Acerca de</h3>
+    <pre class="about-box" style="font-family: Tahoma, monospace; white-space: pre-wrap;">
+Codificador URIDAVIC 36
+Versión: 1.0
+Copyright 2026, Dany Hertiz
+URIDAVIC CORP.
+
+Este programa es de uso exclusivo para miembros de la corporación URIDAVIC o personal con privilegio de acceso.
+
+El código internacional URIDAVIC36 es propiedad de la Corporación URIDAVIC 36, la cual se reserva el derecho de uso y edición de dicho código.
+
+Advertencia:
+
+Este programa está protegido por las leyes de derechos de autor y otros tratados internacionales.
+La reproducción o distribución ilícita de este programa o de cualquier parte del mismo está penada por la ley con severas sanciones civiles y penales y será objeto de todas las acciones judiciales que correspondan.
+
+P.D. No es cierto 🤭
+    </pre>
+</div>
+<div class="xp-tab-content" id="tab-help-code">
+                                    <h3>Tabla de sustitución de caracteres</h3>
+                                    <div class="xp-table-container">
+                                        <table class="xp-char-table">
+                                            <thead>
+                                                <tr><th>Char</th><th>Código</th><th>Char</th><th>Código</th><th>Char</th><th>Código</th></tr>
+                                            </thead>
+                                            <tbody id="xp-table-body">
+                                                <!-- Se generará dinámicamente con JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -22,5 +180,6 @@
 
     <script src="js/components.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/codificador.js"></script>
 </body>
 </html>
