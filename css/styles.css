@@ -540,6 +540,7 @@ a:hover {
 
 .card-back h3 {
     background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 16px;
