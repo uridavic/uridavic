@@ -144,7 +144,7 @@ xp-footer {
     justify-content: center;
     position: relative;
     border: 1px solid var(--glass-border);
-    background: rgba(0, 114, 255, 0.5);
+    background: rgba(122, 122, 122, 0.733);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-radius: 999px;
@@ -161,6 +161,7 @@ xp-footer {
     background: linear-gradient(135deg, #f8f8f8 0%, #bfc3c7 22%, #ffffff 42%, #73777d 63%, #d9dde1 82%, #8e949b 100%);
     pointer-events: none;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 }
@@ -171,7 +172,7 @@ xp-footer {
     font-weight: 800;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: #00bd2f;
+    color: #08ec00;
 }
 
 .header-content p {
@@ -338,6 +339,7 @@ xp-footer {
     font-weight: 800;
     letter-spacing: -0.03em;
     background: linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
