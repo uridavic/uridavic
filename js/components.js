@@ -21,7 +21,9 @@ class XPHeader extends HTMLElement {
             <header class="particle-header">
                 <canvas id="particle-canvas"></canvas>
                 <div class="header-content">
-                    <h1>URIDAVIC</h1>
+                    <div class="header-title-frame">
+                        <h1>URIDAVIC</h1>
+                    </div>
                 </div>
                 <nav class="xp-nav">
                     <a href="index.html" class="nav-btn start-btn ${isActive('index.html') ? 'active' : ''}">
