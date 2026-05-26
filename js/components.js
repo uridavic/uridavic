@@ -18,9 +18,10 @@ class XPHeader extends HTMLElement {
         };
 
         this.innerHTML = `
-            <header class="xp-header">
-                <div class="header-top">
-                    <h1 class="glitch-text" data-text="URIDAVIC">URIDAVIC</h1>
+            <header class="particle-header">
+                <canvas id="particle-canvas"></canvas>
+                <div class="header-content">
+                    <h1>URIDAVIC</h1>
                 </div>
                 <nav class="xp-nav">
                     <a href="index.html" class="nav-btn start-btn ${isActive('index.html') ? 'active' : ''}">
