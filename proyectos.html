@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="img/udv.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/codificador.css">
+    <link rel="stylesheet" href="css/story-generator.css">
 </head>
 <body>
     <xp-header></xp-header>
@@ -93,6 +94,67 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Generador de historias URIDAVIC - Retro Windows XP App -->
+            <div class="story-generator-card">
+                <div class="story-xp-window" id="story-generator-app">
+                    <div class="story-xp-title-bar">
+                        <span class="story-xp-icon" aria-hidden="true">📄</span>
+                        <span class="story-xp-title">Generador de historias URIDAVIC</span>
+                        <div class="story-xp-controls" aria-hidden="true">
+                            <button class="story-xp-control story-xp-control-min" type="button" tabindex="-1"></button>
+                            <button class="story-xp-control story-xp-control-max" type="button" tabindex="-1"></button>
+                            <button class="story-xp-control story-xp-control-close" type="button" tabindex="-1"></button>
+                        </div>
+                    </div>
+
+                    <div class="story-xp-content">
+                        <div class="story-error-box" id="story-error-box" role="status" aria-live="polite"></div>
+                        <div class="story-status-box" id="story-status-box" role="status" aria-live="polite"></div>
+
+                        <div id="story-form-panel">
+                            <div class="story-toolbar">
+                                <div class="story-field">
+                                    <label for="story-select">Seleccionar historia</label>
+                                    <select id="story-select" name="story-select"></select>
+                                </div>
+                            </div>
+
+                            <form id="story-form" novalidate>
+                                <div class="story-form-grid" id="story-questions"></div>
+                                <div class="story-actions">
+                                    <button class="story-xp-button" type="button" id="story-clear">Limpiar formulario</button>
+                                    <button class="story-xp-button story-xp-button-primary" type="submit">Generar historia</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="story-result" id="story-result-panel" hidden>
+                            <div class="story-word-window">
+                                <div class="story-word-toolbar" aria-hidden="true">
+                                    <span class="story-word-tool">B</span>
+                                    <span class="story-word-tool">I</span>
+                                    <span class="story-word-tool">U</span>
+                                    <span>Historia generada</span>
+                                </div>
+                                <div class="story-document">
+                                    <h3 id="story-result-title"></h3>
+                                    <p id="story-result-text"></p>
+                                </div>
+                            </div>
+                            <div class="story-actions">
+                                <button class="story-xp-button" type="button" id="story-reset">Volver al formulario</button>
+                                <button class="story-xp-button story-xp-button-primary" type="button" id="story-copy">Copiar historia</button>
+                            </div>
+                        </div>
+
+                        <div class="story-status-bar">
+                            <div id="story-status-left">Cargando historias...</div>
+                            <div>URIDAVIC Corp. 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -176,5 +238,7 @@ P.D. No es cierto 🤭
     <script src="js/components.js"></script>
     <script src="js/app.js"></script>
     <script src="js/codificador.js"></script>
+    <script src="js/story-data.js"></script>
+    <script src="js/story-generator.js"></script>
 </body>
 </html>
