@@ -135,7 +135,7 @@
     width: 9px;
     height: 7px;
     border: 2px solid #ffffff;
-    border-top: 3px solid #ffffff;
+    border-top-width: 3px;
 }
 
 .xp-btn-close {
@@ -143,14 +143,15 @@
     border-color: #ffffff !important;
 }
 .xp-btn-close::after {
-    content: "×";
+    content: "x";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -52%);
+    transform: translate(-50%, -53%);
     color: #ffffff;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: bold;
+    line-height: 1;
     text-shadow: 0 1px 1px rgba(0,0,0,0.5);
 }
 .xp-btn-close:hover {
