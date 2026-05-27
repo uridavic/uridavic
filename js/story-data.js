@@ -190,6 +190,96 @@ preguntas: [
 plantilla: "En una noche {{momentoNoche}}, {{nombreProtagonista}} entró a {{lugarAbandonado}} para {{motivoEntrada}}. Apenas cruzó la entrada, escuchó {{sonidoExtrano}}. Con el corazón acelerado, avanzó {{formaCaminar}} por los oscuros pasillos. De repente, encontró {{objetoOscuro}} en el suelo. Mientras intentaba comprender lo que veía, una criatura {{descripcionCriatura}} apareció lentamente frente a él. El miedo provocó que {{reaccionMiedo}}. La criatura se acercó y susurró: \"{{fraseCriatura}}\". Desesperado, intentó escapar {{accionEscape}}, pero justo antes de llegar a la salida, {{eventoFinal}}. Desde esa noche, nadie volvió a ver a {{nombreProtagonista}}."
 
 
+},
+
+{
+id: "historia-aventura",
+
+titulo: "⚔️ HISTORIA DE AVENTURA ⚔️",
+
+preguntas: [
+    {
+        id: "nombreExplorador",
+        texto: "Nombre del aventurero",
+        placeholder: "Ramiro",
+        maxlength: 35
+    },
+
+    {
+        id: "tipoDia",
+        texto: "Cómo era el día al comenzar la aventura",
+        placeholder: "soleado y caluroso",
+        maxlength: 50
+    },
+
+    {
+        id: "lugarInicio",
+        texto: "Lugar donde inicia la aventura",
+        placeholder: "el puerto abandonado",
+        maxlength: 60
+    },
+
+    {
+        id: "objetoValioso",
+        texto: "Objeto legendario que desea encontrar",
+        placeholder: "el cristal dorado",
+        maxlength: 60
+    },
+
+    {
+        id: "acompanante",
+        texto: "Nombre del compañero de aventura",
+        placeholder: "Esteban",
+        maxlength: 35
+    },
+
+    {
+        id: "medioTransporte",
+        texto: "Medio de transporte que utilizan",
+        placeholder: "un viejo dirigible",
+        maxlength: 60
+    },
+
+    {
+        id: "lugarPeligroso",
+        texto: "Lugar peligroso que deben atravesar",
+        placeholder: "la cueva de las sombras",
+        maxlength: 70
+    },
+
+    {
+        id: "criatura",
+        texto: "Criatura peligrosa que aparece",
+        placeholder: "un gigantesco escorpión rojo",
+        maxlength: 70
+    },
+
+    {
+        id: "formaEscapar",
+        texto: "Cómo logran escapar",
+        placeholder: "saltando hacia un puente roto",
+        maxlength: 80
+    },
+
+    {
+        id: "descubrimiento",
+        texto: "Qué descubren al final",
+        placeholder: "un mapa hacia otra ciudad perdida",
+        maxlength: 80
+    },
+
+    {
+        id: "emocionFinal",
+        texto: "Cómo se siente el protagonista al final",
+        placeholder: "más valiente que nunca",
+        maxlength: 60
+    }
+],
+
+plantilla: 
+
+"En un día {{tipoDia}}, {{nombreExplorador}} llegó a {{lugarInicio}} buscando {{objetoValioso}}. Acompañado por {{acompanante}}, decidió emprender el viaje utilizando {{medioTransporte}}. Después de varias horas de camino, ambos tuvieron que atravesar {{lugarPeligroso}}. Mientras avanzaban cuidadosamente, apareció {{criatura}} bloqueando el paso. Por un instante pensaron que todo estaba perdido, pero lograron escapar {{formaEscapar}}. Tras sobrevivir al peligro, finalmente encontraron {{objetoValioso}} entre antiguas ruinas. Sin embargo, lo más sorprendente ocurrió después: descubrieron {{descubrimiento}}. Al terminar la aventura, {{nombreExplorador}} se sintió {{emocionFinal}}, sabiendo que aquella había sido apenas la primera de muchas expediciones."
+
 }
 
 
